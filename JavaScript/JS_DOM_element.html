@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>元素</title>
+</head>
+<body>
+
+<div id="div1">
+<p id="p1">这是一个段落。</p>
+<p id="p2"> 这个是需要被移除的段落。</p>
+<p id="p3"> 这个是需要被替换的段落</p>
+</div>
+ 
+<script>
+<!--创建<p>元素-->
+var para = document.createElement("p");
+<!--为创建的<p>元素创建新的节点-->
+var node = document.createTextNode("这是一个新的段落");
+<!--将创建的节点添加到<p>元素中-->
+para.appendChild(node);
+<!--在一个已存在的元素中添加p元素-->
+var element = document.getElementById("div1")
+element.appendChild(para);
+
+var node2 = document.createTextNode("这时第二个创建的节点");
+var para2 = document.createElement("p4");
+para2.appendChild(node2);
+var child = document.getElementById("p1");   <!--找到id为p1的元素-->
+element.insertBefore(para2,child);   <!-- 如果我们需要新元素添加到开始位置，可是使用insertBefore()方法：-->
+
+let childp2 = document.getElementById("p2");
+element.removeChild(childp2);
+
+var para5 = document.createElement("p5");
+var node = document.createTextNode("这是新替代的段落");
+para5.appendChild(node);
+var childp3 = document.getElementById("p3");
+element.replaceChild(para5,childp3);
+
+</script>
+
+</body>
+</html>
