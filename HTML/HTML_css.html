@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML css</title>
+
+<!--当单个文件需要特别样式时，就可以使用内部样式表，你可以在<head>部分通过<style>标签定义内部样式表-->
+<style type="text/css">
+h1{color:red}
+p{color:blue}
+</style>
+<!--当样式需要被应用到很多页面的时候，外部样式表将是理想的选择，使用外部样式。你就可以通过更改一个文件来改变整个站点外观-->
+<!-- style:定义文本样式-->
+<!-- link:定义资源引用地址-->
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body style="background-color:yellow;">
+
+<h1> 这是一个标题</h1>
+<p>这是一个段落</p>
+
+<!--没有下划线的链接-->
+<a href="https://www.baidu.com/" style="text-decoration:none;">访问 百度!</a>
+<h1> 我使用了外部样式文件来格式化文本</h1>
+<p>我也是!</p>
+<p style="color:blue;margin-left:20px;">this is a paragraph</p>
+
+<!--定义一元素的背景颜色-->
+
+<h2 style="background-color:red;">这是一个标题</h2>
+<p style="background-color:green;">这是一个段落</p>
+
+<!--可以使用font-family(字体)，color(颜色),和font-size(字体大小)属性来定义字体的样式;-->
+<h2 style="font-family:verdana;">一个标题</h2>
+<p2 style="font-family:arial;color:red;font-size:50px;">一个段落。</p2>
+
+<!--使用text-align(文字对齐)属性指定文本的水平与垂直对齐方式;-->
+<h2 style="text-align:center;">剧中对齐的标题</h2>
+
+</body>
+</html>
