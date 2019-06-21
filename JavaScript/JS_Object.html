@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>对象</title>
+<!--
+JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...JavaScript 允许自定义对象。
+JavaScript 提供多个内建对象，比如 String、Date、Array 等等。 对象只是带有属性和方法的特殊数据类型。
+布尔型可以是一个对象。
+数字型可以是一个对象。
+字符串也可以是一个对象
+日期是一个对象
+数学和正则表达式也是对象
+数组是一个对象
+甚至函数也可以是对象
+对象拥有属性和方法
+-->
+</head>
+<body>
+<p id="demo"></p>
+<script>
+<!--这个例子创建了对象的一个新实例，并向其添加了四个属性：-->
+var person = new Object();
+person.firstName = "john";
+person.lastName = "doe";
+person.age = 50;
+person.eyecolor = "blue";
+document.write(person.firstName + "is" + person.age + "years olg" + "<br>");
+<!-- 上面的例子也可以这样写-->
+
+person1 = {firstName:"colin",lastName:"Doe",age:20,eyecolor:"blue"};
+document.write(person1.firstName + "is" + person1.age + "years olg" + "<br>");
+<!-- 另一种写法 -->
+function Person2(firstName,lastName,age,eyecolor){
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.age = age;
+	this.eyecolor = eyecolor;
+}
+myFather = new Person2("jack","doe",50,"blue");
+document.write(myFather.firstName + "is" +myFather.age + " years olg" + "<br>");
+
+<!-- 把方法添加到对象上，在构造器函数内部定义对象的方法-->
+function person3(firstname,lastname,age,eyecolor){
+    this.person3FirstName=firstname;
+    this.personLastName=lastname;
+    this.age=age;
+    this.eyecolor=eyecolor;
+    this.changeName=changeName;
+	function changeName(name){
+		this.personLastName=name;
+	}
+}
+myMother = new person3("sally","Rally",48,"green");
+myMother.changeName("doe");
+document.write(myMother.personLastName);
+
+<!-- for..in语句循环遍历对象的属性 -->
+
+	var x;
+	var txt="";
+	var person={fname:"Bill",lname:"Gates",age:56}; 
+	for (x in person){
+		txt=txt + person[x];
+	}
+	document.getElementById("demo").innerHTML=txt;
+
+
+</script>
+
+</body>
+</html>

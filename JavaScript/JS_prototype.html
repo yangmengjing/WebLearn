@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+<h2>JavaScript Prototype原型对象</h2>
+
+<p id="demo"></p>
+<p id = "nationality"><p>
+<p id = "name"><p>
+<script>
+function Person(first,last,age,eye){
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.eyeColor = eye;
+}
+<!--在一个已存在的对象构造器中是不能添加新的属性的-->
+Person.nationality = "English";  
+var myFather = new Person("John","Doe",50,"blue");
+var myMother = new Person("Sally","Rally",48,"gree");
+document.getElementById("demo").innerHTML = "我的父亲年龄是" + myFather.age + "。 我的母亲年龄是" + myMother.age;
+document.getElementById("demo").innerHTML = "我父亲的国籍是" + myFather.nationality;  //获得是null值
+
+<!-- 可用通过prototype添加新的属性-->
+Person.prototype.nationality = "English"
+document.getElementById("nationality").innerHTML = "我父亲的国籍是" + myFather.nationality; 
+
+<!--  当然也可以通过prototype添加新的方法-->
+Person.prototype.name = function(){
+	return this.firstName + " " + this.lastName
+	}
+
+document.getElementById("name").innerHTML = "我对父亲是 " + myFather.name();
+
+
+</script>
+
+</body>
+</html>
