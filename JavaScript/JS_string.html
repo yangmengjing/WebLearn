@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>JavaScript String)</title> 
+</head>
+<body>
+<p id="p1"> click the button to locate where "locate" first occurs.</p>
+<p id="p2">0</p>
+<button onclick="myFunction1()"> 长度 </button>
+<br>
+<br>
+<button onclick = "myFunction2()">替换</button>
+<p id="demo1">请访问 Microsoft!</p>
+<br>
+<br>
+<button onclick = "myFunction3()"> 转数组</button>
+<p id = "demo2">单机按钮显示数组</p>
+<script>
+<!-- 1.字符串的索引从零开始，所以字符串第一个字符为[0],第二个字符为[1],等等。2.你可以在字符串中使用引用好，-->
+<!-- 使用反斜线 \ 插入特殊符号: \'单引号，\"双引号，\\斜杆,\n换行，\r回车，\t tab , \b 空格， \f 换页 -->
+var carname1="Volvo XC60";
+var carname2='Volvo XC60';
+var answer1='It\'s alright';
+var answer2="He is called \"Johnny\"";
+var answer3='He is called "Johnny"';
+document.write(carname1 + "<br>")
+document.write(carname2 + "<br>")
+document.write(answer1 + "<br>")
+document.write(answer2 + "<br>")
+document.write(answer3 + "<br>")
+
+<!-- 字符串使用长度属性length来计算字符串的长度：-->
+var txt = "hello world!";
+document.write("<p>" + txt.length + "</p>");
+var txt = "abcdefghlmnopqrstuvwxyz";
+document.write("<p>" + txt.length + "</p>");
+function myFunction1(){
+	var str = document.getElementById("p1").innerHTML;
+	var n = str.indexOf("locate"); <!--如果没找到对应的字符函数返回-1;
+	document.getElementById("p2").innerHTML=n+1;
+}
+
+<!--内容匹配，match()函数用来查找字符串中特定的字符，并且如果找到的话，则返回这个字符，如果没找到的话返回null-->
+var str = "hello world!";
+document.write(str.match("world") + "<br>");
+document.write(str.match("World") + "<br>");
+document.write(str.match("world!") + "<br>");
+
+<!--替换内容 replace()方法在字符串中用某些字符替换另一些字符-->
+function myFunction2(){
+	var str = document.getElementById("demo1").innerHTML;
+	var txt = str.replace("Microsoft","Runoob");
+	document.getElementById("demo1").innerHTML = txt;
+}
+
+<!--字符串转数组，使用split()函数转为数组；-->
+<!-- txt.split(",") //使用逗号分隔 txt.split(" ") //使用空格分隔 txt.split("|") //使用竖线分隔
+function myFunction3(){
+	var str = "a,b,c,d,e,f";
+	var n = str.split(",");
+	document.getElementById("demo2").innerHTML = n[0];
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>日期</title>
+</head>
+
+<body onload="startTime()">
+<p id="demo1">点击我获取今年的年份</p>
+<button onclick="myFunction1()">获取年份</button>
+<br>
+<p id="demo2">单击按钮显示1970年1月1号至今的毫秒数。</p>
+<button onclick="myFunction2()">获取毫秒数</button>
+<br>
+<p id="demo3">点击显示修改后的年月日.</p>
+<button onclick="myFunction3()">修改日期</button>
+<br>
+<p id="demo4"> 点击按钮把 utc 日期和时间转换成字符串 </p>
+<button onclick="myFunction4()">转成字符串</button>
+<br>
+<p id="demo5">点击按钮显示今天周几</p>
+<button onclick="myFunction5()">周几</button>
+<br>
+<p id = "demo6"> 今天和2100.0.14作对比</p>
+<button onclick="myFunction6()">对比</button>
+<p id = "txt"></p>
+<script>
+var d=new Date();
+document.write(d);
+function myFunction1(){
+	var x = document.getElementById("demo1");
+	x.innerHTML=d.getFullYear();
+}
+function myFunction2(){
+	var x = document.getElementById("demo2");
+	x.innerHTML = d.getTime();
+}
+function myFunction3(){
+	var da = new Date();
+	da.setFullYear(2020,10,3);
+	var x = document.getElementById("demo3");
+	x.innerHTML = da;
+}
+function myFunction4(){
+	var x = document.getElementById("demo4");
+	x.innerHTML = d.toUTCString();
+}
+function myFunction5(){
+	var weekday = new Array(7);
+	weekday[0] = "周日";
+	weekday[1] = "周一";
+	weekday[2] = "周二";
+	weekday[3] = "周三";
+	weekday[4] = "周四";
+	weekday[5] = "周五";
+	weekday[6] = "周六";
+	var x = document.getElementById("demo5");
+	x.innerHTML = weekday[d.getDay()];
+}
+
+function myFunction6(){
+	let x = new Date();
+	x.setFullYear(2100,0,4);
+	var today = new Date();
+	var y = document.getElementById("demo6");
+	if(x > today)
+	{
+		y.innerHTML = "今天是2100年1月14日之前";
+	}
+	else
+	{
+		y.innerHTML = "今天是2100年1月14日以后";
+	}
+}
+
+function startTime(){
+	var today = new Date();
+	var h = today.getHours(); //获取小时
+	var m = today.getMinutes(); //获取分钟
+	var s = today.getSeconds(); 
+	m = checkTime(m);
+	s = checkTime(s);
+	document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+	t=setTimeout(function(){startTime()},500);
+}
+//在小于10的数字前加一个"0";
+function checkTime(i){
+	if(i<10)
+	{
+		i = "0" + i;
+	}
+	return i;
+}
+
+
+
+</script>
+
+</body>
+</html>
