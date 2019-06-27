@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浏览器BOM</title>
+</head>
+<body>
+<input type = "button" value = "加载新的文档" onclick = "newDoc()">
+<br>
+<br>
+<button  onclick="goBack()">返回上一页</button>
+<br>
+<br>
+<button onclick="goForward()">返回前一页</button>
+<br>
+<br>
+<button onclick = "myFunction1()">显示警告窗口</button>
+<br>
+<p id="demo1"></p>
+<br>
+<button onclick = "myFunction2()">点击按钮显示确认框</button>
+<br>
+<p id="demo2"></p>
+<br>
+<button onclick = "myFunction3()">点击按钮查看输入的对话框</button>
+<br>
+<br>
+<script>
+<!-- window对象在编写时可以不使用window这个前缀-->
+document.write("可用宽度:"+window.screen.availWidth);
+
+document.write("浏览器可用高度:"+window.screen.availHeight);
+document.write("<br>");
+document.write("返回web主机的域名:"+window.location.hostname);
+document.write("<br>");
+document.write("返回当前页面的路径和页面名:"+window.location.pathname);
+document.write("<br>");
+document.write("返回当前页面的URL:"+window.location.href);
+document.write("<br>");
+document.write("返回web主机的端口:"+window.location.port);
+document.write("<br>");
+document.write("返回所使用的web协议:"+window.location.protocol);
+document.write("<br>");
+txt = "<p>浏览器代号: " + navigator.appCodeName + "</p>";
+txt+= "<p>浏览器名称: " + navigator.appName + "</p>";
+txt+= "<p>浏览器版本: " + navigator.appVersion + "</p>";
+txt+= "<p>启用Cookies: " + navigator.cookieEnabled + "</p>";
+txt+= "<p>硬件平台: " + navigator.platform + "</p>";
+txt+= "<p>用户代理: " + navigator.userAgent + "</p>";
+txt+= "<p>用户代理语言: " + navigator.systemLanguage + "</p>";
+document.write(txt)
+
+function newDoc(){
+	window.location.assign("https://www.baidu.com/");
+}
+function goBack(){
+	
+	window.history.back()
+}
+function goForward(){
+	window.history.forward()
+}
+function a(){
+	history.go(1) //前进一页
+	history.go(-1) //后退一夜
+}
+function myFunction1(){
+	alert("你好，我是一个警告框!")
+}
+function myFunction2(){
+	var x;
+	var r = confirm("按下按钮!");
+	if(r == true)
+	{
+		x="你按下\"确认\"按钮";
+	}
+	else
+	{
+		x= "你按下了\"取消\"按钮";
+	}
+	document.getElementById("demo1").innerHTML = x;
+}
+function myFunction3(){
+	var x;
+	var person = prompt("请输入你的名字","Harry potter");
+	if(person != null && person!=""){
+		x = "你好" + person + "! 今天感觉如何";
+		document.getElementById("demo2").innerHTML = x;
+	}
+}
+</script>
+
+
+
+</body>
+</html>
