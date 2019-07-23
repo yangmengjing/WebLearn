@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="test.js"></script>
+<title>05_jQuery冲突问题</title>
+<script>
+	//解决引用的其他文件中也定义了$符号
+	//1.释放$的使用权
+	//注意点：释放操作必须在编写其它jQuery代码之前编写
+	//		   释放之后就不能再使用$,改为改为使用jQuery
+	//jQuery.noConflict();
+	//2.自定义一个访问符号
+	var mg = jQuery.noConflict();
+	mg(function(){
+		alert("hello lnj");
+	})
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>04_jQuery入口函数的其它写法</title>
+<script>
+	//第一种写法
+	$(document).ready(function(){
+		alert("hello lnj1");		
+	});
+	//第二种写法
+	jQuery(document).ready(function(){
+		alert("hello lnj2");		
+	});
+	//第三种写法  推荐
+	$(function(){
+		alert("hello lnj3");
+	})
+	//第三种写法
+	jQuery(function(){
+		alert("hello lnj4");
+	})
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

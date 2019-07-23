@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>013_通过webstorm简化操作</title>
+<script>
+	//$.holdReady(true); 作用：暂停ready执行
+	$.holdReady(true);
+	$(document).ready(function(){
+		alert("ready");
+	});
+	
+	
+</script>
+</head>
+
+<body>
+	<button>回复ready事件</button>
+	<script>
+		var btn = document.getElementsByTagName("button")[0];
+		btn.onclick = function(){
+			$.holdReady(false); //恢复ready事件
+		}
+	</script>
+
+</body>
+</html>

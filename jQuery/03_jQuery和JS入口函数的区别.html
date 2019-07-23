@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<title>03-jQuery和JS入口函数的区别</title>
+
+<script>
+	//原生JS和jQuery入口函数的加载模式不同
+	//原生JS会等到DOM元素加载完毕，并且图片也加载完毕才会执行
+	//JQuery会等到DOM元素加载完毕，但不会等到图片也加载完毕就会执行
+	/*
+	window.onload = function(ev){
+		var img = document.getElementsByTagName("img")[0];
+		console.log(img);
+		var width = window.getComputedStyle(img).width;
+		console.log(width);
+	}
+
+	$(document).ready(function(){
+		var $img = $("img")[0];
+		console.log($img);
+		var $width = $img.width();
+		console.log($width);
+	});
+	*/
+	//原生的JS如果编写了多个入口函数，后面编写的会覆盖前面编写的
+	/*
+	window.onload = function(ev){
+		alert("hello inj1");
+	}
+	window.onload = function(ev){
+		alert("hello inj2");
+	}
+	*/
+	$(document).ready(function(){
+		alert("hello lnj1");
+	})
+	$(document).ready(function(){
+		alert("hello lnj2");
+	})
+	
+</script>
+</head>
+	
+
+<body>
+<img src="https://img.alicdn.com/bao/uploaded/i1/TB1JePFKFXXXXaYXVXXXXXXXXXX_!!0-item_pic.jpg_180x180q90.jpg_.webp" alt="">
+</body>
+</html>

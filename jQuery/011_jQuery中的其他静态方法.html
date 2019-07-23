@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>011_jQuery中的其他静态方法</title>
+<script>
+	var str = "   ymg   ";
+	console.log("----"+str+"----");
+	/*
+		$.trim();
+		作用：去除字符串两端的空格
+		参数：需要去除空格的字符串
+		返回值：去除空格之后的字符串
+	*/
+	var res = $.trim(str); 
+	console.log("----"+res+"----");
+	
+	//真数组
+	var arr = [1,3,5,6,7,8];
+	//伪数组
+	var arrlike = {0:0,1:1,2:2,3:3,4:4 };
+	//对象
+	var obj = {"name":"ymj","age":"33"};
+	//函数
+	var fn = function(){};
+	//window对象
+	var w = window;
+	/*
+		$.isWindow();
+		作用:判断传入的对象时候是window对象
+		返回值：true/false
+	*/
+	var isWindow = $.isWindow(w);
+	console.log(isWindow);
+	/*
+		$.isArray();
+		作用:判断传入的对象是否是真数组
+		返回值：true/false
+	*/
+	var isArray = $.isArray(arr);
+	console.log(isArray);
+	var isArray = $.isArray(arrlike);
+	console.log(isArray);
+	/*
+		$.isFunction();
+		作用:判断传入的对象是否是一个函数
+		返回值：true/false
+		注意：
+		jQuery框架本质上是一个函数
+		(function(window,undefind){})(window);
+	*/	
+	var isFunction = $.isFunction(fn);
+	console.log(isFunction)  
+	var isFunction = $.isFunction(jQuery);
+	console.log(isFunction);
+	
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

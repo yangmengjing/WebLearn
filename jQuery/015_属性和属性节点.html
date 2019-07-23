@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>015_属性和属性节点</title>
+
+<script>
+
+	$(function(){
+		/*
+			1.什么是属性？
+				对象身上保存的变量就是属性
+			2.如何操作属性？
+				对象.属性名称 = 值;
+				对象.属性名称;
+				对象["属性名称"] = 值;
+				对象["属性名称"]
+			3.什么是属性节点?
+			    <span name = "it666"></span>
+			    在编写HTML代码时,在HTML标签中添加的属性就是属性节点
+		*/
+		
+		function Person(){
+		
+		}
+		var p = new Person();
+		p.name = "ymj";
+		p["sex"] = "man";
+		console.log(p.name);
+		console.log(p["sex"]);
+		
+		var span = document.getElementsByTagName("span")[0];
+		span.setAttribute("name","cj");
+		console.log(span.getAttribute("name"))
+	});
+	
+</script>
+</head>
+
+<body>
+
+	<span name="ymj"></span>
+
+
+</body>
+</html>
