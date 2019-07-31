@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>034_电影排行榜上</title>
+	<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 450px;
+				margin: 50px auto;
+				border: 1px solid #000;
+			}
+			.box>h1{
+				font-size: 20px;
+				line-height: 35px;
+				color: deeppink;
+				padding-left: 10px;
+				border-bottom: 1px dashed #ccc;
+			}
+			ul>li{
+				list-style: none;
+				padding:5px 10px;
+				border: 1px dashed #ccc;
+			}
+			ul>li:nth-child(-n+3) span{
+				background: deeppink;
+			}
+			ul>li>span{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: #ccc;
+				text-align: center;
+				line-height: 20px;
+				margin-right: 10px;
+			}
+			.content{
+				overflow: hidden;
+				margin-top: 5px;
+				display: none;
+			}
+			.content>img{
+				width: 80px;
+				height: 120px;
+				float: left;
+			}
+			.content>p{
+				width: 180px;
+				height: 120px;
+				float: right;
+				font-size: 12px;
+				line-height: 20px;
+			}
+			.current>.content{
+				display: block;
+			}
+	</style>
+
+<script>
+
+	$(function(){
+
+		//编写jQuery相关代码
+		/*
+		//1.监听li的移入事件
+		$("li").mouseenter(function(){
+			console.log("xxxxxxx")
+			$(this).addClass("current");
+		})
+		//2.监听li的移入事件
+		$("li").mouseleave(function(){
+			$(this).removeClass("current");
+		})*/
+		//第二种方法
+		$("li").hover(function(){
+			$(this).addClass("current");
+		},function(){
+			$(this).removeClass("current");
+		})
+	});
+</script>
+</head>
+ 
+<body>
+	<div class = "box">
+	<h1>电影排行榜</h1>
+	<ul>
+		<li ><span>1</span>电影名称
+			<div class ="content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+		<li ><span>2</span>电影名称
+			<div class = "content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+		<li><span>3</span>电影名称
+			<div class = "content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+		<li><span>4</span>电影名称
+			<div class = "content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+		<li><span>5</span>电影名称
+			<div class = "content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+		<li><span>6</span>电影名称
+			<div class = "content">
+				<img src = "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2563780504.jpg" alt ="">
+				<p>
+				 简介：天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间。元始天尊启动了天劫咒语，3年后天雷将会降临，摧毁魔丸。太乙受命将灵珠托生于陈塘关李靖家的儿子哪吒身上。然而阴差阳错，灵珠和魔丸竟然被掉包。本应是灵珠英雄的哪吒却成了混世大魔王。调皮捣蛋顽劣不堪的哪吒却徒有一颗做英雄的心。
+				</p>
+			</div>
+		</li>
+	</ul>
+	</div>
+</body>
+</html>

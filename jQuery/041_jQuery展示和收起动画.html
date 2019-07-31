@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>041_jQuery展示和收起动画</title>
+	<style>
+		*{
+		
+		}
+		div{
+			width: 200px;
+			height: 400px;
+			background: red;
+		
+		}
+
+	</style>
+
+<script>
+
+	$(function(){
+		$("button").eq(0).click(function(){
+			$("div").slideDown(1000,function(){
+				alert("展开完毕");
+			});
+		});
+		$("button").eq(1).click(function(){
+			$("div").slideUp(1000,function(){
+				alert("收起完毕");
+			});
+		});
+		$("button").eq(2).click(function(){
+			$("div").slideToggle(1000,function(){
+				alert("切换完毕");	
+			});
+		});
+	});
+</script>
+</head>
+
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div></div>
+</body>
+</html>
